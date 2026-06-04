@@ -1,0 +1,43 @@
+{
+  "name": "issuebench",
+  "version": "0.1.0",
+  "description": "Benchmark coding agents on your own GitHub issues and repo tasks.",
+  "type": "module",
+  "bin": {
+    "issuebench": "./bin/issuebench.js"
+  },
+  "files": [
+    "bin",
+    "src",
+    "examples",
+    "docs",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "test": "node --test",
+    "demo": "node ./bin/issuebench.js run --config examples/issuebench.config.json --out .issuebench/demo-results.json && node ./bin/issuebench.js report --input .issuebench/demo-results.json --format terminal",
+    "report:html": "node ./bin/issuebench.js report --input .issuebench/demo-results.json --format html --out .issuebench/report.html"
+  },
+  "keywords": [
+    "ai-agent",
+    "coding-agent",
+    "benchmark",
+    "evals",
+    "github-issues",
+    "codex",
+    "claude-code",
+    "cursor",
+    "agent-evaluation",
+    "leaderboard"
+  ],
+  "license": "MIT",
+  "engines": {
+    "node": ">=18"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/823675737937532791/123.git"
+  },
+  "homepage": "https://github.com/823675737937532791/123#readme"
+}

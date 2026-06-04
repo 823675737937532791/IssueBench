@@ -1,0 +1,38 @@
+{
+  "workspace": "demo-repo",
+  "timeoutMs": 30000,
+  "outputDir": "../.issuebench",
+  "agents": [
+    {
+      "id": "good-agent",
+      "name": "Good Demo Agent",
+      "command": "node \"$ISSUEBENCH_CONFIG_DIR/agents/good-agent.js\"",
+      "patterns": {
+        "cost": "cost: \\$(\\d+\\.\\d+)",
+        "tokens": "tokens: (\\d+)"
+      }
+    },
+    {
+      "id": "bad-agent",
+      "name": "Bad Demo Agent",
+      "command": "node \"$ISSUEBENCH_CONFIG_DIR/agents/bad-agent.js\"",
+      "patterns": {
+        "cost": "cost: \\$(\\d+\\.\\d+)",
+        "tokens": "tokens: (\\d+)"
+      }
+    }
+  ],
+  "tasks": [
+    {
+      "id": "fix-discount",
+      "title": "Fix percentage discount math",
+      "prompt": "Fix src/cart.js so applyDiscount treats percent as a percentage while preserving existing total behavior.",
+      "criteria": [
+        "applyDiscount(100, 20) returns 80",
+        "applyDiscount(50, 10) returns 45",
+        "npm test passes"
+      ],
+      "verify": ["npm test"]
+    }
+  ]
+}

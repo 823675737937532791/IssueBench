@@ -1,0 +1,8 @@
+{
+  "name": "issuebench-demo-repo",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "test": "node verify.js"
+  }
+}
